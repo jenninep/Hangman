@@ -1,132 +1,71 @@
-(function () {
-    "use strict";
-    var availableLetters, words, guessInput, guess, guessButton, lettersGuessed, lettersMatched, output, man, letters, lives, currentWord, numLettersMatched, messages;
+var word = 'Javahell';
+var guessed = [];
+var guessesleft = 10
 
-    function setup() {
-        /* start config options */
-        availableLetters = "abcdefghijklmnopqrstuvwxyz";
-        lives = 5;
-        words = ["cat", "dog", "cow", "reindeer"];
-        messages = {
-            win: 'You win!',
-            lose: 'Game over!',
-            guessed: ' already guessed, please try again...',
-            validLetter: 'Please enter a letter from A-Z'
-        };
-        /* end config options */
+document.onkeyup = function(event) {
+    var letter = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log(letter);
+   
 
-        lettersGuessed = lettersMatched = '';
-        numLettersMatched = 0;
+    //if user pressed a letter thats inside the word
+    if (word.indexOf(letter) !== -1) {
+        guessed.push(letter);
+        guessesleft--;
+        //then put it in the target word    
+    
+    } else {
+        console.log('it worked');
+        guessesleft--;
 
-        /* choose a word */
-        currentWord = words[Math.floor(Math.random() * words.length)];
-
-        /* make #man and #output blank, create vars for later access */
-        output = document.getElementById("output");
-        man = document.getElementById("man");
-        guessInput = document.getElementById("letter");
-
-        man.innerHTML = 'You have ' + lives + ' lives remaining';
-        output.innerHTML = '';
-
-        document.getElementById("letter").value = '';
-
-        /* make sure guess button is enabled */
-        guessButton = document.getElementById("guess");
-        guessInput.style.display = 'inline';
-        guessButton.style.display = 'inline';
-
-        /* set up display of letters in current word */
-        letters = document.getElementById("letters");
-        letters.innerHTML = '<li class="current-word">Current word:</li>';
-
-        var letter, i;
-        for (i = 0; i < currentWord.length; i++) {
-            letter = '<li class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</li>';
-            letters.insertAdjacentHTML('beforeend', letter);
-        }
+    
+        //else put it in the you chosen letters 
     }
 
-    function gameOver(win) {
-        if (win) {
-            output.innerHTML = messages.win;
-            output.classList.add('win');
-        } else {
-            output.innerHTML = messages.lose;
-            output.classList.add('error');
-        }
+    $('#guesses').html(guessed);
+    
+};
 
-        guessInput.style.display = guessButton.style.display = 'none';
-        guessInput.value = '';
-    }
 
-    /* Start game - should ideally check for existing functions attached to window.onload */
-    window.onload = setup();
 
-    /* buttons */
-    document.getElementById("restart").onclick = setup;
 
-    /* reset letter to guess on click */
-    guessInput.onclick = function () {
-        this.value = '';
-    };
 
-    /* main guess function when user clicks #guess */
-    document.getElementById('hangman').onsubmit = function (e) {
-        if (e.preventDefault) e.preventDefault();
-        output.innerHTML = '';
-        output.classList.remove('error', 'warning');
-        guess = guessInput.value;
 
-        /* does guess have a value? if yes continue, if no, error */
-        if (guess) {
-            /* is guess a valid letter? if so carry on, else error */
-            if (availableLetters.indexOf(guess) > -1) {
-                /* has it been guessed (missed or matched) already? if so, abandon & add notice */
-                if ((lettersMatched && lettersMatched.indexOf(guess) > -1) || (lettersGuessed && lettersGuessed.indexOf(guess) > -1)) {
-                    output.innerHTML = '"' + guess.toUpperCase() + '"' + messages.guessed;
-                    output.classList.add("warning");
-                }
-                /* does guess exist in current word? if so, add to letters already matched, if final letter added, game over with win message */
-                else if (currentWord.indexOf(guess) > -1) {
-                    var lettersToShow;
-                    lettersToShow = document.querySelectorAll(".letter" + guess.toUpperCase());
+// //function intializeGame(){
+//     div_used = document.getElementById('used');
+//     div_puzzle = document.getElementById('puzzle');
+//     div_available = document.getElementById('available');
 
-                    for (var i = 0; i < lettersToShow.length; i++) {
-                        lettersToShow[i].classList.add("correct");
-                    }
+// var buttons = function () {
+//     myButtons = document.getElementById('buttons');
+//     letters = document.createElement('ul');
 
-                    /* check to see if letter appears multiple times */
-                    for (var j = 0; j < currentWord.length; j++) {
-                        if (currentWord.charAt(j) === guess) {
-                            numLettersMatched += 1;
-                        }
-                    }
+//     for (var i = 0; i < alphabet.length; i++) {
+//       letters.id = 'alphabet';
+//       list = document.createElement('li');
+//       list.id = 'letter';
+//       list.innerHTML = alphabet[i];
+//       check();
+//       myButtons.appendChild(letters);
+//       letters.appendChild(list);
+//     }
 
-                    lettersMatched += guess;
-                    if (numLettersMatched === currentWord.length) {
-                        gameOver(true);
-                    }
-                }
-                /* guess doesn't exist in current word and hasn't been guessed before, add to lettersGuessed, reduce lives & update user */
-                else {
-                    lettersGuessed += guess;
-                    lives--;
-                    man.innerHTML = 'You have ' + lives + ' lives remaining';
-                    if (lives === 0) gameOver();
-                }
-            }
-            /* not a valid letter, error */
-            else {
-                output.classList.add('error');
-                output.innerHTML = messages.validLetter;
-            }
-        }
-        /* no letter entered, error */
-        else {
-            output.classList.add('error');
-            output.innerHTML = messages.validLetter;
-        }
-        return false;
-    };
-}());
+
+
+    
+
+
+// function chooseWord () {
+
+
+// for (var i = 0; i < words.length; i++){
+//     var ranNum= Math.floor(Math.random()*5);
+//     return ranNum;
+
+// function newGame() {
+//     var placeholders = '',
+//         frag = document.createDocumentFragment(),
+//         abc = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+//                'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+// }
+
+//    

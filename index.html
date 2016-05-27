@@ -3,10 +3,11 @@
 <head>
 	<title>Christmas Hangman</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -14,8 +15,8 @@
 			<img src="assets/images/logo.png" alt="Hangman logo">
 		</div>
 
-		<div class="col-md-2">
-			<div id="hangman_img" class="image0"></div>
+		<div class="col-md-4">
+			<div id="hangman_img"></div>
 		</div>
 
 		<div id="word" class="col-md-4 text-center">
@@ -28,28 +29,9 @@
 			<p><strong id="previousGuesses"><em>nothing yet... guess a letter</em></strong></p>
 		</div>
 
-		<div class="row">
-			<div id="guessInput" class="col-md 8 text-center">
-				<br>
-				<br>
-				<br>
-				<input type="text" maxlength="1" id="guess" placeholder="Type a letter"/>
-			</div>
-				<div class="modal fade" id="endGameDialog" tabindex="-1" role="dialog" aria-labelledby="	endGameDialog" aria-hidden="true">
-	            <div class="modal-dialog">
-	                <div class="modal-content">
-	                    <div class="modal-header">
-	                        <h4><a onclick="resetGame();" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></h4>
-	                        <h4 id="endGameDialogTitle"></h4>
-	                    </div>
-	                    <div class="modal-body" id="endGameDialogContent"></div>
-	                    <div class="modal-footer">
-	                        <h4><a onclick="resetGame();" class="btn btn-primary" data-dismiss="modal">Reset</a></h4>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-		</div>
+		<div class="container">
+	      	<button id="reset">Play again</button>
+   	 	</div>
 	</div>
 </body>
 </html>

@@ -1,16 +1,34 @@
 
-.image0{
-	width: 220px;
-	height: 264px;
-	background: url('hang1.png');
-	
-
+.btnLetter{
+	display: inline-block;
+	text-align: center;
+	font-size: 18pt;
+	width: 30px;
+	height: 30px;
+	padding: 2px;
+	margin: 3px;
+	color: white;
+	background-color: red;
+	cursor: pointer;
+	cursor: hand;
+	border-radius: 5px;
+	border: white 2px solid;
+	-moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
-<h4>{
+.btnLetter:hover{
+	background-color: blue;
+}
+
+h4{
 	font-size: 20px;
     color: red;
     background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 20px
 }
 
 
@@ -28,4 +46,8 @@ html {
 
 body{
 	background: none;
+}
+
+input{
+	margin-left: -30px;
 }

@@ -13,11 +13,11 @@
 <body>
 	<div class="container">
 		<div>
-			<img src="assets/images/logo.png" alt="Hangman logo">
+			<img class="logo" src="assets/images/logo.png" alt="Hangman logo">
 		</div>
 
 		<div class="col-md-4">
-			<div id="hangman_img"></div>
+			<div id="hangman"></div>
 		</div>
 
 		<div id="word" class="col-md-4 text-center">
@@ -25,13 +25,18 @@
 			<p><strong id="targetWord"></strong></p>
 		</div>
 
-		<div id="guesses" class="col-md-4 text-center">
+		<div class="col-md-4 text-center">
 			<h4>You Have Guessed</h4>
-			<p><strong id="previousGuesses"><em>nothing yet... guess a letter</em></strong></p>
+			<p><strong id="guesses"><em>nothing yet... guess a letter</em></strong></p>
 		</div>
 
+		<div id="guessesIncorrect" class="col-md-4 text-center">
+		</div>
+
+
 		<div class="container">
-	      	<input type="button" onclick="myFunction()" value="Play Again">
+	      	 <h4><a onclick="resetGame();" class="btn btn-primary" data-dismiss="modal">Reset</a></h4>
+
    	 	</div>
 	</div>
 </body>

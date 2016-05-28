@@ -1,3 +1,21 @@
+.logo{
+	width: 65%;
+	margin-left: 150px;	
+}
+
+
+#hangman {
+
+}
+
+#reset{
+	margin-left: 100px;
+
+}
+
+#guesses{
+	font-size: 20px;
+}
 
 .btnLetter{
 	display: inline-block;
@@ -24,7 +42,6 @@
 h4{
 	font-size: 20px;
     color: red;
-    background-color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
@@ -33,9 +50,9 @@ h4{
 
 
 img {
-	width: 65%;
-	margin-left: 150px;
-	margin-bottom: 30px;
+	width: 75%;
+	margin-left: 85px;
+	
 }
 html {
 	height: 100%;

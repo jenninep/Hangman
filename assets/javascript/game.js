@@ -1,6 +1,9 @@
 var word = 'javahell';
-var guessed = [];
+var guessedCorrect = [];
+var guessedIncorrect = [];
 var guessesleft = 10
+var wrongGuesses = 0
+
 
 document.onkeyup = function(event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();
@@ -9,25 +12,28 @@ document.onkeyup = function(event) {
 
     //if user pressed a letter thats inside the word
     if (word.indexOf(letter) !== -1) {
-        guessed.push(letter);
+        guessedCorrect.push(letter);
         guessesleft--;
         //then put it in the target word    
     
     } else {
         console.log('it worked');
+        guessedIncorrect.push(letter);
         guessesleft--;
+        wrongGuesses++;
 
-    
-        //else put it in the you chosen letters 
+    $('#hangman').html('<img src="assets/images/hang' + wrongGuesses + '.png">');
+
     }
 
-    $('#guesses').html(guessed);
+    $('#guesses').html(guessedCorrect);
+    $('#guessesIncorrect').html(guessedIncorrect);
     
     };
 
 
 function myFunction() {
-    document.getElementById("Play Again").reset();
+    document.getElementById("#reset").reset();
 };
 
 

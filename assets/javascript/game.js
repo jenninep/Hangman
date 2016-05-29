@@ -1,10 +1,14 @@
 var word = 'javahell';
 var guessedCorrect = [];
 var guessedIncorrect = [];
-var guessesleft = 10
+var guessesleft = 8
 var wrongGuesses = 0
 
 
+for (var i = 0; i < word.length; i++) {
+    guessedCorrect.push('_ ');
+  }
+  
 document.onkeyup = function(event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();
     console.log(letter);
@@ -26,15 +30,16 @@ document.onkeyup = function(event) {
 
     }
 
-    $('#guesses').html(guessedCorrect);
-    $('#guessesIncorrect').html(guessedIncorrect);
+    $('#guesses').html(guessedIncorrect);
+    $('#guessesIncorrect').html(guessedCorrect);
     
     };
 
 
-function myFunction() {
-    document.getElementById("#reset").reset();
+function resetGame() {
+    window.location.reload()
 };
+
 
 
     

@@ -1,21 +1,25 @@
+#guesses{
+	background-color: white;
+	font-size: 20px;
+}
+
+
+#guessesIncorrect{
+	font-weight: bold;
+	font-size: 20px;
+	background-color: white;
+}
+
+.button{
+	margin-left: 150px;
+	float: right;
+}
+
 .logo{
 	width: 65%;
 	margin-left: 150px;	
 }
 
-
-#hangman {
-
-}
-
-#reset{
-	margin-left: 100px;
-
-}
-
-#guesses{
-	font-size: 20px;
-}
 
 .btnLetter{
 	display: inline-block;
@@ -47,7 +51,14 @@ h4{
     letter-spacing: 1px;
     font-size: 20px
 }
-
+h1{
+	
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 40px
+}
 
 img {
 	width: 75%;

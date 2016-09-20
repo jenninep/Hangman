@@ -1,4 +1,4 @@
-var word = 'javahell';
+var word = 'snowman';
 var guessedCorrect = [];
 var guessedIncorrect = [];
 var guessesleft = 8
@@ -7,6 +7,8 @@ var wrongGuesses = 0
 for (var i = 0; i < word.length; i++) {
     guessedCorrect.push('_ ');
 }
+
+$('#guessesIncorrect').html(guessedCorrect);
 
 document.onkeyup = function(event) {
     var letter = String.fromCharCode(event.keyCode).toLowerCase();

@@ -1,73 +1,58 @@
 #guesses{
-	background-color: white;
-	font-size: 20px;
+	
+	font-size: 18px;
+	margin-right: -100px;
 }
 
 
 #guessesIncorrect{
-	font-weight: bold;
-	font-size: 20px;
-	background-color: white;
+	ffont-weight: bold;
+    font-size: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: red;
+    border: solid;
 }
 
-.button{
-	margin-left: 150px;
-	float: right;
+
+#button{
+	color: #fff;
+    background-color: #ff0000;
+    border-color: #5ca9e1;
+    float: right;
 }
 
 .logo{
-	width: 65%;
-	margin-left: 150px;	
+	max-width: 100%;
+    height: auto;
 }
 
 
-.btnLetter{
-	display: inline-block;
-	text-align: center;
-	font-size: 18pt;
-	width: 30px;
-	height: 30px;
-	padding: 2px;
-	margin: 3px;
-	color: white;
-	background-color: red;
-	cursor: pointer;
-	cursor: hand;
-	border-radius: 5px;
-	border: white 2px solid;
-	-moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-.btnLetter:hover{
-	background-color: blue;
-}
-
-h4{
-	font-size: 20px;
-    color: red;
+h3{
+	color: #03284b;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 20px
+    font-size: 30px;
+    display: inherit;
+    padding: 20px;
+    float: none;
+    border-radius: 10px;
 }
 h1{
 	
-    color: red;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 40px
+    font-size: 40px;
+    padding: 10px;
 }
 
-img {
-	width: 75%;
-	margin-left: 85px;
-	
-}
 html {
 	height: 100%;
-	background: url('christmas.jpg') no-repeat center center;
+	background: url('christmas1.png') no-repeat center center;
 	background-size: cover;
 
 }
@@ -76,6 +61,13 @@ body{
 	background: none;
 }
 
-input{
-	margin-left: -30px;
+
+#hangman{
+	margin-top: -60px;
+	max-width: 100%;
+    height: auto;
 }
+#word{
+	margin-top: -40px;
+}
+

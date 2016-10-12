@@ -1,17 +1,15 @@
 #guesses{
-	
 	font-size: 18px;
-	margin-right: -100px;
 }
 
 
-#guessesIncorrect{
-	ffont-weight: bold;
+#guessesCorrect{
+	font-weight: bold;
     font-size: 50px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    color: red;
+    color: #0946bc;
     border: solid;
 }
 
@@ -20,17 +18,20 @@
 	color: #fff;
     background-color: #ff0000;
     border-color: #5ca9e1;
-    float: right;
+    display: none;
+    margin-top: -20px;
+    margin-bottom: 20px;
 }
 
 .logo{
 	max-width: 100%;
     height: auto;
+    
 }
 
 
 h3{
-	color: #03284b;
+	color: #0946bc;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
@@ -42,18 +43,23 @@ h3{
 }
 h1{
 	
-    color: white;
+    color: #0946bc;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 40px;
     padding: 10px;
+    margin-top: -30px;
+
 }
 
 html {
-	height: 100%;
-	background: url('christmas1.png') no-repeat center center;
+/*	height: 100%;*/
+	background: url('christmas.png') no-repeat center center;
 	background-size: cover;
+    background-color: #26defd;;
+    width: 100%;
+    height: auto;
 
 }
 
@@ -61,13 +67,74 @@ body{
 	background: none;
 }
 
-
+img{
+    max-width: inherit;
+    margin-top: 10px;
+}
 #hangman{
 	margin-top: -60px;
 	max-width: 100%;
     height: auto;
+    
+
 }
 #word{
 	margin-top: -15px;
+
 }
+
+#message{
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -30px;
+}
+#losses{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    float: right;
+   
+}
+#wins{
+   color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    float: right;
+    margin-right: 30px
+   
+}
+
+#scoreBox{
+    margin-top: 41px;
+    display: inline-block;
+    background-color: #02157e;
+    border-radius: 0px;
+    color: #4696fa;
+    border: 1px solid;
+    padding: 8px;
+    margin-bottom: -22px;
+
+}
+@media screen and (max-width: 768px){
+   #guessesCorrect{
+    font-size: 35px;
+   }
+
+   h1{
+     margin-bottom: 27px;
+   }
+}
+
+
+
+
+
+
 

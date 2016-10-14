@@ -120,7 +120,14 @@ if (guessesleft > 0){
 
 $("button").on('click', function(){
     console.log("clicked init");
-
+    $('#message').text("");
+    $('#guessesCorrect').text("");
+    $('#guesses').text("");
+    $('#guessedIncorrect').text("");
+    guessedIncorrect = [];
+    wrongGuesses = [];
+    $('#hangman').html("");
+    $('#hangman').show();
 
     initGame();
 });    
